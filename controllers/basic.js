@@ -1,3 +1,6 @@
+const bot = require("../routes/basicRoutes");
+
+
 const basic_command = {
   use(context, next) {
     console.log(context.message);
@@ -20,12 +23,15 @@ const basic_command = {
     next(context);
   },
 
+
+
   help(context) {
     context.reply("hey....you");
   },
 
-  what_i_can_do(context) {
+ what_i_can_do(context) {
     context.reply(" yo man");
+    // context.telegram.sendVideo(process.env.SKILLZ_ID ,'BAACAgUAAxkBAAIB9WFBxQJJUAnDQSc_Ojj5cROE6Pb4AAIKBAACrTsQVvuFB6VDNekDIAQ')
   },
 
   start(context) {
