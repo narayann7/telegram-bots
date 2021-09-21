@@ -27,7 +27,7 @@ const basic_command = {
   },
 
   help(context) {
-    context.reply("hey....you");
+    context.reply("under development");
   },
 
   // what_i_can_do(context) {
@@ -35,7 +35,7 @@ const basic_command = {
   // },
 
   start(context) {
-    let message = `hey ${context.from.first_name} 👋,\nhope you doing well 😇 . use/click  ->  /help for more..`;
+    let message = `hey ${context.from.first_name} 👋,\nhope you doing well 😇 . use/click  ->  /info for more..`;
     context.reply(message);
   },
   info(context) {
