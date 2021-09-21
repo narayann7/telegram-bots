@@ -39,6 +39,7 @@
 - [ ] make **.gitignore** file with following content:
     ```
     node_modules
+    .env
     ```
 - [ ] Login to Heroku:
     ```bash
@@ -53,9 +54,9 @@
 Creating app... done, ⬢ ex-example-10101
 https://ex-example-10101.herokuapp.com/ | https://git.heroku.com/ex-example-10101.git
 ```
-here AppId = ex-example-10101,
-       BOT_DOMAIN = https://ex-example-10101.herokuapp.com/
-       BOT_TOKEN , the token will get when you will create bot using bot_father
+here AppId = ex-example-10101,<br>
+       BOT_DOMAIN = 'https://ex-example-10101.herokuapp.com/', <br>
+       BOT_TOKEN , the token will get when you will create bot using bot_father <br>
 
 
 - [ ] Update Heroku config
@@ -63,7 +64,7 @@ here AppId = ex-example-10101,
     heroku config:set --app AppId BOT_TOKEN='YOUR BOT TOKEN'
     heroku config:set --app AppId BOT_DOMAIN='https://AppId.herokuapp.com'
     ```
-- [ ] Create a **Procfile** in the root of the bot with the following content:
+- [ ] Create a **Procfile** in the root of the project with the following content:
     ```
     web: micro-bot -p $PORT
     ```
@@ -74,12 +75,28 @@ here AppId = ex-example-10101,
     git push heroku master
     ```
 
-## How to make changes and redeploy the code:
-- [ ] Just save all changes.
-- [ ] Run following commands:
+- [ ] How to make changes and redeploy the code:
+ - [ ] Just save all changes.
+ - [ ] Run following commands:
     ```bash
     git add .
     git commit -m 'commit message'
     git push heroku master
     ```
+- [ ] How to see log of heroku , just run following command:
+```bash
+heroku logs --tail 
+```
+
+- [ ] How to turn on / off bot in heroku: 
+    - [ ] For turning OFF:
+        ```bash
+       heroku maintenance:on
+        ```
+    - [ ] For turning ON:
+        ```bash
+       heroku maintenance:off   
+       ```
+
+
 
